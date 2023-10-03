@@ -22,7 +22,7 @@ class EmployeeRepositoryTest {
 
 
     @BeforeEach
-    void setEmployeeRepository() {
+    void setUp() {
         employee = Employee.builder()
                 .id(1L)
                 .firstName("Ramesh")
