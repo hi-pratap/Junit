@@ -37,4 +37,19 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         return employeeRepository.findAll();
     }
+
+    @Override
+    public Employee getEmployeeByID(Long id) {
+        Optional<Employee> byId = employeeRepository.findById(id);
+        if(byId.isEmpty()){
+            throw new RuntimeException("No Such Employee..!!");
+        }
+        return byId.get();
+    }
+
+    @Override
+    public Employee updateEmployee(Employee employee) {
+
+        return employeeRepository.save(employee);
+    }
 }
